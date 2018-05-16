@@ -1,0 +1,1 @@
+INSERT INTO users(name, username, password)VALUES("Janko Jankovic", "janko", "123");
