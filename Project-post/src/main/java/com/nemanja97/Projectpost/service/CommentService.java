@@ -34,4 +34,9 @@ public class CommentService implements CommentServiceInterface {
 		commentRepository.deleteById(id);
 	}
 	
+	@Override
+	public List<Comment> findByPost(Integer id){
+		return commentRepository.findByPost_Id(id);
+	}
+	
 }

@@ -33,7 +33,11 @@ public class PostService implements PostServiceInterface{
 	public void remove(int id) {
 		postRepository.deleteById(id);
 	}
-	
+
+//	@Override
+//	public Post findByComments(Integer id) {
+//		return postRepository.findByComments_Id(id);
+//	}
 	
 
 }

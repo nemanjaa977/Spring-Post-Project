@@ -36,7 +36,6 @@ public class Post {
 	@Lob
 	@Column(name="photo")
 	private byte[] photo;
-	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="date",nullable=false)
 	private Date date;

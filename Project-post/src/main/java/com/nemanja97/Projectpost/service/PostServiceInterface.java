@@ -10,5 +10,6 @@ public interface PostServiceInterface {
 	List<Post> findAll();
 	Post save(Post post);
 	void remove(int id);
+//	Post findByComments(Integer id);
 	
 }

@@ -15,8 +15,10 @@ public class PostDTO implements Serializable {
 	private int like;
 	private int dislike;
 	private UserDTO userDTO;
+	private float longitude;
+	private float latitude;
 	
-	public PostDTO(int id, String title, String description, byte[] photo, Date date, int like, int dislike, UserDTO userDTO) {
+	public PostDTO(int id, String title, String description, byte[] photo, Date date, int like, int dislike, UserDTO userDTO,float longitude,float latitude) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -26,10 +28,28 @@ public class PostDTO implements Serializable {
 		this.like = like;
 		this.dislike = dislike;
 		this.userDTO = userDTO;
+		this.longitude = longitude;
+		this.latitude = latitude;
 	}
 	
 	public PostDTO(Post post) {
-		this(post.getId(), post.getTitle(), post.getDescription(), post.getPhoto(), post.getDate(), post.getLike(), post.getDislike(), new UserDTO(post.getUser()));
+		this(post.getId(), post.getTitle(), post.getDescription(), post.getPhoto(), post.getDate(), post.getLike(), post.getDislike(), new UserDTO(post.getUser()), post.getLongitude(), post.getLatitude());
+	}
+	
+	public float getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
+	}
+
+	public float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(float latitude) {
+		this.latitude = latitude;
 	}
 
 	public UserDTO getUserDTO() {

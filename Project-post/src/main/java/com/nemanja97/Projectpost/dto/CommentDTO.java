@@ -7,19 +7,20 @@ import com.nemanja97.Projectpost.entity.Comment;
 
 public class CommentDTO implements Serializable {
 	
-	private int id;
+	private Integer id;
 	private String title;
 	private String description;
 	private Date date;
 	private int like;
 	private int dislike;
 	private PostDTO postDTO;
+	private UserDTO userDTO;
 	
 	public CommentDTO() {
 		super();
 	}
 
-	public CommentDTO(int id, String title, String description, Date date, int like, int dislike, PostDTO postDTO) {
+	public CommentDTO(Integer id, String title, String description, Date date, int like, int dislike, PostDTO postDTO, UserDTO userDTO) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -28,10 +29,11 @@ public class CommentDTO implements Serializable {
 		this.like = like;
 		this.dislike = dislike;
 		this.postDTO = postDTO;
+		this.userDTO = userDTO;
 	}
 	
 	public CommentDTO(Comment comment) {
-		this(comment.getId(), comment.getTitle(), comment.getDescription(), comment.getDate(), comment.getLike(), comment.getDislike(), new PostDTO(comment.getPost()));
+		this(comment.getId(), comment.getTitle(), comment.getDescription(), comment.getDate(), comment.getLike(), comment.getDislike(), new PostDTO(comment.getPost()), new UserDTO(comment.getUser()));
 	}
 	
 	
@@ -44,11 +46,11 @@ public class CommentDTO implements Serializable {
 		this.postDTO = postDTO;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -78,6 +80,14 @@ public class CommentDTO implements Serializable {
 
 	public int getLike() {
 		return like;
+	}
+
+	public UserDTO getUserDTO() {
+		return userDTO;
+	}
+
+	public void setUserDTO(UserDTO userDTO) {
+		this.userDTO = userDTO;
 	}
 
 	public void setLike(int like) {
