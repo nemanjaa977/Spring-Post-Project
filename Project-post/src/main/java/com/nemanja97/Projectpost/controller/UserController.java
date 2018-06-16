@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.nemanja97.Projectpost.dto.UserDTO;
 import com.nemanja97.Projectpost.entity.User;
@@ -22,6 +23,7 @@ import com.nemanja97.Projectpost.service.UserServiceInterface;
 @RestController
 @RequestMapping(value="api/users")
 public class UserController {
+	
 	
 	@Autowired
 	private UserServiceInterface userService;
@@ -56,6 +58,8 @@ public class UserController {
 	
 	@PostMapping(consumes="application/json")
 	public ResponseEntity<UserDTO> saveUser(@RequestBody UserDTO userDTO){
+		System.out.println("Servis aktiviran");
+		System.out.println(userDTO);
 		User user = new User();
 		user.setName(userDTO.getName());
 		user.setUsername(userDTO.getUsername());

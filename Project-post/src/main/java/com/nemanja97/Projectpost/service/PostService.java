@@ -39,5 +39,9 @@ public class PostService implements PostServiceInterface{
 //		return postRepository.findByComments_Id(id);
 //	}
 	
+	@Override
+	public List<Post> findByTags_Id(Integer id){
+		return postRepository.findByTags_Id(id);
+	}
 
 }

@@ -11,5 +11,6 @@ public interface PostServiceInterface {
 	Post save(Post post);
 	void remove(int id);
 //	Post findByComments(Integer id);
+	List<Post> findByTags_Id(Integer id);
 	
 }

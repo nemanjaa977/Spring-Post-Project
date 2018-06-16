@@ -1,0 +1,200 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	     -o-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+body{
+ 	background: white; 
+}
+
+.navBar {
+  	overflow: hidden;
+  	background-color: #4d4dff;
+  	height: auto;
+}
+
+.navBar a {
+  	float: left;
+  	display: block;
+  	color: white;
+  	text-align: center;
+  	padding: 14px 16px;
+  	text-decoration: none;
+  	font-size: 20px;
+  	opacity: 0.8;
+  	border-right: 1px solid white; 
+}
+
+.navBar a:hover {
+  	color: white;
+  	opacity: 1;
+}
+
+#glavniPost{
+	padding: 10px 250px 5px 250px;
+}
+
+#glavniPost #titlePost{
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 2%;
+}
+
+#glavniPost #descriptionPost{
+	font-size: 22px;
+	margin-bottom: 1%;
+}
+
+#glavniPost #userPost{
+	font-size: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	color: gray;
+	margin-bottom: 1%;
+}
+
+#glavniPost #datePost{
+	display: inline-block;
+	font-size: 20px;
+	margin-left: 30px;
+	margin-bottom: 1%;
+}
+
+#glavniPost #likePostClick{
+	font-size: 30px;
+	color: gray;
+	cursor: pointer;
+}
+
+#glavniPost #dislikePostClick{
+	font-size: 30px;
+	color: gray;
+	display: inline-block;
+	margin-left: 1%;
+	cursor: pointer;
+}
+
+#likePostClickk{
+	border: none;
+	background: white;
+	cursor: pointer;
+}
+
+#dislikePostClickk{
+	border: none;
+	background: white;
+	cursor: pointer;
+	margin-left: 1%;
+}
+
+#glavniPost #likePost{
+	font-size: 30px;
+	display: inline-block;
+	margin-left: 1%;
+}
+
+#glavniPost #dislikePost{
+	font-size: 30px;
+	display: inline-block;
+	margin-left: 1%;
+}
+
+#newComment{
+	padding: 10px 250px 5px 250px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+#newComment #inputComment{
+	font-size: 25px;
+	border: none;
+	border-bottom: 2px solid gray;
+	width: 650px;
+}
+
+#newComment #inputCommenttitle{
+	font-size: 25px;
+	border: none;
+	border-bottom: 2px solid gray;
+	width: 650px;
+}
+
+#newComment #buttonNewComment{
+	font-size: 27px;
+	border: 2px solid gray;
+	background: #4d4dff;
+	margin-left: 10px;
+	width:80px;
+	cursor: pointer;
+	color: white;
+}
+
+#allComment{
+	padding: 10px 250px 5px 250px;
+}
+
+#allComment #oneComment{
+	border-bottom: 1px solid gray;
+}
+
+#oneComment #commentTitle{
+	font-size: 20px;
+}
+
+#oneComment #userPostUsername{
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	color: gray;
+}
+
+#oneComment #commentDate{
+	display: inline-block;
+	margin-left: 25px;
+}
+
+#oneComment #commentDescription{
+	margin-bottom: 1%;
+}
+
+#oneComment #likeComment{
+	display: inline-block;
+	cursor: pointer;
+	font-size: 20px;
+	color: gray;
+}
+
+#oneComment #commentLike{
+	display: inline-block;
+	font-size: 20px;
+}
+
+#oneComment #dislikeComment{
+	display: inline-block;
+	cursor: pointer;
+	font-size: 20px;
+	color: gray;
+}
+
+#oneComment #commentDislike{
+	display: inline-block;
+	font-size: 20px;
+}
+
+#oneComment #likeCom{
+	border: none;
+	background: white;
+	cursor: pointer;
+	margin: 1%;
+}
+
+#oneComment #dislikeCom{
+	border: none;
+	background: white;
+	cursor: pointer;
+	margin: 1%;
+}

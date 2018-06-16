@@ -10,5 +10,6 @@ public interface TagServiceInterface {
 	List<Tag> findAll();
 	Tag save(Tag tag);
 	void remove(int id);
+	List<Tag> findByPosts_Id(Integer id);
 	
 }

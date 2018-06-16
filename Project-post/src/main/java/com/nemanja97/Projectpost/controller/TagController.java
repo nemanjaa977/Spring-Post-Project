@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nemanja97.Projectpost.dto.CommentDTO;
 import com.nemanja97.Projectpost.dto.TagDTO;
 import com.nemanja97.Projectpost.entity.Tag;
+import com.nemanja97.Projectpost.service.PostServiceInterface;
 import com.nemanja97.Projectpost.service.TagServiceInterface;
 
 @RestController
@@ -26,6 +28,9 @@ public class TagController {
 	@Autowired
 	private TagServiceInterface tagService;
 	
+	@Autowired
+	private PostServiceInterface postService;
+	
 	@GetMapping
 	public ResponseEntity<List<TagDTO>> getTags(){
 		List<Tag> tags = tagService.findAll();
@@ -34,6 +39,16 @@ public class TagController {
 			tagDTO.add(new TagDTO(t));
 		}
 		return new ResponseEntity<List<TagDTO>>(tagDTO, HttpStatus.OK);
+	}
+	
+	@GetMapping(value="/post/{id}")
+	public ResponseEntity<List<TagDTO>> getTagById(@PathVariable("id") Integer id){
+		List<Tag> tags = tagService.findByPosts_Id(id);
+		List<TagDTO> tagsDTO = new ArrayList<TagDTO>();
+		for(Tag t: tags) {
+			tagsDTO.add(new TagDTO(t));
+		}
+		return new ResponseEntity<List<TagDTO>>(tagsDTO, HttpStatus.OK);
 	}
 	
 	@PostMapping(consumes="application/json")

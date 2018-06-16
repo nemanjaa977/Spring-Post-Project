@@ -19,7 +19,9 @@ import com.nemanja97.Projectpost.dto.CommentDTO;
 import com.nemanja97.Projectpost.dto.PostDTO;
 import com.nemanja97.Projectpost.entity.Comment;
 import com.nemanja97.Projectpost.entity.Post;
+import com.nemanja97.Projectpost.entity.Tag;
 import com.nemanja97.Projectpost.service.PostServiceInterface;
+import com.nemanja97.Projectpost.service.TagServiceInterface;
 import com.nemanja97.Projectpost.service.UserServiceInterface;
 
 @RestController
@@ -31,6 +33,10 @@ public class PostController {
 	
 	@Autowired
 	private UserServiceInterface userService;
+	
+	@Autowired
+	private TagServiceInterface tagService;
+	
 	@GetMapping
 	public ResponseEntity<List<PostDTO>> getPosts(){
 		List<Post> posts = postService.findAll();
@@ -83,6 +89,24 @@ public class PostController {
 		
 		post = postService.save(post);
 		return new ResponseEntity<PostDTO>(new PostDTO(post), HttpStatus.OK);
+	}
+	
+	@PutMapping(value="/setTags/{postId}/{tagId}",consumes = "application/json")
+	public ResponseEntity<PostDTO> setTagsInPost(@PathVariable("postId") Integer postId,@PathVariable("tagId") Integer tagId){
+		Post post = postService.findOne(postId);
+		Tag tag = tagService.findOne(tagId);
+		
+		if(post == null || tag == null) {
+			return new ResponseEntity<PostDTO>(HttpStatus.BAD_REQUEST);
+		}
+		
+		post.getTags().add(tag);
+		tag.getPosts().add(post);
+		
+		
+		post = postService.save(post);
+		tag = tagService.save(tag);
+		return new ResponseEntity<PostDTO>(new PostDTO(post),HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value="/{id}")
