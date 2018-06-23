@@ -34,53 +34,18 @@ body{
   	opacity: 1;
 }
 
-#glavniUser{
-	padding: 10px 200px 5px 200px;
-	text-align: center;
-}
-
-#glavniUser #nameUser{
-	font-size: 55px;
-}
-
-#nameUser:hover{
-	color: #4d4dff;
-	cursor: pointer;
-}
-
-#glavniUser #editButton{
-	background: #4d4dff;
-	font-size: 30px;
-	cursor: pointer;
-	padding: 1px;
-	color: white;
-	border: none;
-	width: 240px;
-}
-
-#glavniUser #deleteButton{
-	margin-bottom: 1%;
-	margin-top: 1%;
-	background: #4d4dff;
-	font-size: 30px;
-	cursor: pointer;
-	padding: 1px;
-	color: white;
-	border: none;
-	width: 240px;
-}
-
-#editUserProfile{
-	display: none;
-}
-
 .container {
     padding: 10px 350px 3px 350px;
     text-align: center;
     padding-top: 2%;
 }
 
-input[type=text], input[type=password] {
+.container #naslov{
+	font-size: 50px;
+	color: #4d4dff;
+}
+
+input[type=text] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -89,12 +54,12 @@ input[type=text], input[type=password] {
     background: #f2f2f2;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus {
     background-color: ;
     outline: none;
 }
 
-#editSubmitUser {
+button {
     background-color: #4d4dff;
     color: white;
     padding: 14px 20px;
@@ -106,7 +71,7 @@ input[type=text]:focus, input[type=password]:focus {
     opacity: 0.9;
 }
 
-#editSubmitUser:hover {
+button:hover {
     opacity:1;
 }
 
@@ -114,15 +79,4 @@ label{
 	color: #4d4dff;
 	font-size: 20px;
 	float: left;
-}
-
-#clickk{
-	color: gray;
-	cursor: pointer;
-}
-
-#glavniUser #userPhoto{
-	margin-top: 1%;
-	height: 40%; 
-	width: 30%;
 }

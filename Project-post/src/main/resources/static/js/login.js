@@ -11,12 +11,13 @@ $(document).ready(function(){
 		
 		$.get("http://localhost:8080/api/users/user/"+username,{},function(data){
 				if(data.username == username && data.password == password){
+					localStorage.setItem("loggedUser", JSON.stringify(data));
 					window.location.replace('home.html');
 				}
-				
 		}).fail(function(){
 		alert("Wrong username or password!");
 		});
 	});
+	
 	
 });

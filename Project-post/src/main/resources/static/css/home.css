@@ -34,6 +34,26 @@ body{
   	opacity: 1;
 }
 
+.navBar #buttonLogOut:hover {
+  	color: white;
+  	opacity: 1;
+}
+
+.navBar #buttonLogOut {
+  	border: none;
+  	background-color: #4d4dff;
+  	cursor: pointer;
+  	float: left;
+  	display: block;
+  	color: white;
+  	text-align: center;
+  	padding: 14px 16px;
+  	text-decoration: none;
+  	font-size: 20px;
+  	opacity: 0.8;
+  	border-right: 1px solid white; 
+}
+
 .row{
 	padding: 10px 200px 2px 200px;
 }
@@ -73,4 +93,67 @@ body{
 	cursor: pointer;
 	font-size: 20px;
 	color: gray;
+}
+
+.newPost #newUserLink{
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 20px;
+	color: gray;
+	margin-left: 1%;
+}
+
+.newPost #allUserLink{
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 20px;
+	color: gray;
+	margin-left: 1%;
+}
+
+#sortDiv{
+	padding: 10px 200px 10px 200px;
+	display: inline-block;
+}
+
+#sortDiv #sort{
+	font-size: 23px;
+	color: #333;
+	display: inline-block;
+}
+
+#sortDiv .nameSort{
+	font-size: 18px;
+	color: #333;
+	display: inline-block;
+}
+
+#sortDiv #okSort{
+	font-size: 22px;
+	color: white;
+	background: #4d4dff;
+	cursor: pointer;
+	color: #333;
+	border: none;
+}
+
+#searchDiv{
+	padding: 10px 200px 10px 200px;
+	display: inline-block;
+}
+
+#searchDiv #inputAuthor{
+	font-size: 20px;
+	color: gray;
+	padding: 1px;
+}
+
+#searchDiv #okSearchButton{
+	font-size: 25px;
+	color: white;
+	border: none;
+	background: #4d4dff;
+	width: 40px;
+	cursor: pointer;
+	padding: 2px;
 }

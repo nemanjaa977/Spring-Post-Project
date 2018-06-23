@@ -65,6 +65,7 @@ public class UserController {
 		user.setUsername(userDTO.getUsername());
 		user.setPassword(userDTO.getPassword());
 		user.setPhoto(userDTO.getPhoto());
+		user.setRole(userDTO.getRole());
 		
 		user = userService.save(user);
 		return new ResponseEntity<UserDTO>(new UserDTO(user), HttpStatus.CREATED);
@@ -81,6 +82,7 @@ public class UserController {
 		user.setUsername(userDTO.getUsername());
 		user.setPassword(userDTO.getPassword());
 		user.setPhoto(userDTO.getPhoto());
+		user.setRole(userDTO.getRole());
 		
 		user = userService.save(user);
 		return new ResponseEntity<UserDTO>(new UserDTO(user), HttpStatus.OK);

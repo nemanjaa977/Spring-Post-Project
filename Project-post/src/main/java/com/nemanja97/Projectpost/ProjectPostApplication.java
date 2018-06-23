@@ -10,4 +10,5 @@ public class ProjectPostApplication  {
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectPostApplication.class, args);
 	}
+	
 }

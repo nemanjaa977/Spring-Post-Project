@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -55,7 +56,24 @@ public class PostController {
 		}
 		return new ResponseEntity<PostDTO>(new PostDTO(post), HttpStatus.OK);
 	}
-
+	
+	@GetMapping(value="/order/{orderBy}")
+	public ResponseEntity<List<PostDTO>> getPostById(@PathVariable("orderBy") String orderBy){
+		List<Post> posts = null;
+		List<PostDTO> postsDTO = new ArrayList<PostDTO>();
+		if(orderBy.equals("datePublication")) {
+			 posts = postService.findAllOrderByDate();
+		}else if(orderBy.equals("numberLike")) {
+			posts = postService.findAllOrderByLike();
+		}else if(orderBy.equals("numberDislike")) {
+			posts = postService.findAllOrderByDislike();
+		}
+		
+		for(Post p: posts) {
+			postsDTO.add(new PostDTO(p));
+		}
+		return new ResponseEntity<List<PostDTO>>(postsDTO, HttpStatus.OK);
+	}
 	
 	@PostMapping(consumes="application/json")
 	public ResponseEntity<PostDTO> createPost(@RequestBody PostDTO postDTO){
@@ -98,11 +116,9 @@ public class PostController {
 		
 		if(post == null || tag == null) {
 			return new ResponseEntity<PostDTO>(HttpStatus.BAD_REQUEST);
-		}
-		
+		}		
 		post.getTags().add(tag);
 		tag.getPosts().add(post);
-		
 		
 		post = postService.save(post);
 		tag = tagService.save(tag);

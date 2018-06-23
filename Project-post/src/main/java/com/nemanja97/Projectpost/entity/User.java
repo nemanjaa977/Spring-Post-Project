@@ -31,6 +31,8 @@ public class User {
 	@Lob
 	@Column(name="photo")
 	private byte[] photo;
+	@Column(name="role",nullable=true)
+	private String role;
 	
 	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.LAZY,mappedBy="user")
 	private Set<Post> posts= new HashSet<Post>();
@@ -46,7 +48,7 @@ public class User {
 		
 	}
 	
-	public User(Integer id, String name, String username, String password, byte[] photo, Set<Post> posts,
+	public User(Integer id, String name, String username, String password, byte[] photo, String role, Set<Post> posts,
 			Set<Comment> comments) {
 		super();
 		this.id = id;
@@ -54,6 +56,7 @@ public class User {
 		this.username = username;
 		this.password = password;
 		this.photo = photo;
+		this.role = role;
 		this.posts = posts;
 		this.comments = comments;
 	}
@@ -97,7 +100,13 @@ public class User {
 	public void setPhoto(byte[] photo) {
 		this.photo = photo;
 	}
-	
-	
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 	
 }

@@ -9,8 +9,25 @@
 	</head>
 	<body>
 		<div class="navBar"></div>
+		<div class='editPostAnd'></div>
 		<div id='glavniPost'></div>
 		<div id='newComment'></div>
+		<div id='sortDiv'>
+		  	<p id='sort'>Sort by</p>
+		  	<select class='nameSort'>
+		  		<option value="date">Date</option>
+		  		<option value="numberLike">Number of like</option>
+		  		<option value="numberDislike">Number of dislike</option>
+		  	</select>
+		  	<button id='okSort'><i class="fa fa-check"></i></button>
+		  </div>
 		<div id='allComment'></div>
+		<div id='editComentarDiv'>
+			<p id='hideClickk'>(Click here to close!)</p>	
+			<p id='editNaslov'>Edit comment</p>
+			<textarea rows="" cols="" id='editTiltleComm'></textarea><br>
+			<textarea rows="" cols="" id='editDescriptionComm'></textarea><br>
+			<button id='saveEditComm'>Save</button>
+		</div>
 	</body>
 </html>

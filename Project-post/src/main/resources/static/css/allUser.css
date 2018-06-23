@@ -1,0 +1,64 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	     -o-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+body{
+ 	background: white; 
+}
+
+.navBar {
+  	overflow: hidden;
+  	background-color: #4d4dff;
+  	height: auto;
+}
+
+.navBar a {
+  	float: left;
+  	display: block;
+  	color: white;
+  	text-align: center;
+  	padding: 14px 16px;
+  	text-decoration: none;
+  	font-size: 20px;
+  	opacity: 0.8;
+  	border-right: 1px solid white; 
+}
+
+.navBar a:hover {
+  	color: white;
+  	opacity: 1;
+}
+
+.row{
+	padding: 10px 100px 5px 100px;
+}
+
+.row .column{
+	display: inline-block;
+	text-align: center;
+}
+
+.column #userPhoto{
+	width: 300px;
+	height: 300px;
+}
+
+.column #usernameUser{
+	text-decoration: none;
+	color: gray;
+	cursor: pointer;
+	font-size: 25px;
+}
+
+#usernameUser:hover{
+	color: #4d4dff;
+}
+
+.column p{
+	font-size: 18px;
+}

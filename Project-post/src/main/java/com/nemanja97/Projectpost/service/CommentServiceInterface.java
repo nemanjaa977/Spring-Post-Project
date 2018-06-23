@@ -13,4 +13,8 @@ public interface CommentServiceInterface {
 	void remove(int id);
 	List<Comment> findByPost(Integer id);
 	
+	List<Comment> findAllOrderByDate(Integer id);
+	List<Comment> findAllOrderByLike(Integer id);
+	List<Comment> findAllOrderByDislike(Integer id);
+	
 }

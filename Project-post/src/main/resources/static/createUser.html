@@ -2,20 +2,20 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Register</title>
-		<link rel="stylesheet" type="text/css" href="css/register.css">
+		<title>Add new user</title>
+		<link rel="stylesheet" type="text/css" href="css/createUser.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="jquery-3.2.1.js"></script>
-		<script type="text/javascript" src="js/register.js"></script>
+		<script type="text/javascript" src="js/createUser.js"></script>
 	</head>
 <body>
 	<div class="navBar">
-	  <a class="active" href="index.html"><i class="fa fa-unlock-alt"></i> Login</a>
+	  <a class="active" href="home.html"><i class="fa fa-unlock-alt"></i> Home</a>
 	</div>
 	
 	<form>
 	  <div class="container">
-	    <p id='naslov'>Register new user</p>
+	    <p id='naslov'>Add new user/admin</p>
 		
 		<label>Name</label>
 	    <input type="text" id="nameInput" placeholder="Enter name">
@@ -26,10 +26,17 @@
 		<label>Password</label>
 	    <input type="password" id="passwordInput" placeholder="Enter password">
 		
-		<label>Photo</label>
-	    <input type="text" id="photoInput" placeholder="Enter photo">
+		<div class="roleDiv">
+		    <label>Role: </label>
+		    <label id="adminII"> Admin
+				  <input type="radio" checked="checked" name="roleRole" value="admin">
+				</label>
+				<label id="userII">Objavljivac
+				  <input type="radio" name="roleRole" value="objavljivac">
+				</label>
+		</div>
 		
-	    <button type="submit" id="registerSubmit">Sign Up</button>
+	    <button type="submit" id="registerSubmit">Add</button>
 
 	  </div>
 	</form>

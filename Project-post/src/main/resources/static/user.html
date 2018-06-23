@@ -9,6 +9,24 @@
 	</head>
 	<body>
 		<div class="navBar"></div>
-		<div id='glavniUser'></div>
+		<div id='glavniUser'>
+			<p id='usernameUser'></p>
+			<img alt="User photo" src="photo/admin.png" id='userPhoto'>
+   			<p id='nameUser'></p>
+	   		<button id='deleteButton'><i class='fa fa-trash'></i> Delete profile</button><br>
+	   		<button id='editButton'><i class='fa fa-edit'></i> Edit profile</button>
+		</div>
+		<div id='editUserProfile'>
+			<div class='container'>
+				<p id='clickk'>(Click here to hide the edit box!)</p>
+				<label>Name</label>
+			    <input type='text' id='nameInputEdit'>
+			    <label>Username</label>
+			    <input type='text' id='usernameInputEdit'>
+			    <label id='labelPass'>Password</label>
+			    <input type='password' id='passwordInputEdit'>
+			    <button type='submit' id='editSubmitUser'>Save</button>
+		  	</div>
+		</div>
 	</body>
 </html>

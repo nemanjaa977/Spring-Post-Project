@@ -3,6 +3,7 @@ package com.nemanja97.Projectpost.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.nemanja97.Projectpost.entity.Post;
@@ -33,15 +34,25 @@ public class PostService implements PostServiceInterface{
 	public void remove(int id) {
 		postRepository.deleteById(id);
 	}
-
-//	@Override
-//	public Post findByComments(Integer id) {
-//		return postRepository.findByComments_Id(id);
-//	}
 	
 	@Override
 	public List<Post> findByTags_Id(Integer id){
 		return postRepository.findByTags_Id(id);
+	}
+
+	@Override
+	public List<Post> findAllOrderByDate() {
+		return postRepository.findAllByOrderByDate();
+	}
+
+	@Override
+	public List<Post> findAllOrderByLike() {
+		return postRepository.findAllByOrderByLike();
+	}
+
+	@Override
+	public List<Post> findAllOrderByDislike() {
+		return postRepository.findAllByOrderByDislike();
 	}
 
 }
