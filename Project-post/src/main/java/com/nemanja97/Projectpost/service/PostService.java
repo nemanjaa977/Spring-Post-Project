@@ -11,7 +11,7 @@ import com.nemanja97.Projectpost.repository.PostRepository;
 
 @Service
 public class PostService implements PostServiceInterface{
-	
+
 	@Autowired
 	PostRepository postRepository;
 	
@@ -54,5 +54,10 @@ public class PostService implements PostServiceInterface{
 	public List<Post> findAllOrderByDislike() {
 		return postRepository.findAllByOrderByDislike();
 	}
-
+	
+	@Override
+	public List<Post> findAllBySearch(String text) {
+		return postRepository.findAllBySearch(text);
+	}
+	
 }

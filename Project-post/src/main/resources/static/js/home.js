@@ -56,4 +56,23 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	$('body').on('click', '#okSearchButton',function(event){
+		console.log("ddd");
+		var preuzietiText = $('#inputAuthor').val();
+		$.get("http://localhost:8080/api/posts/search/"+preuzietiText,{},function(data){
+			row.empty();
+			for(var i=0;i<data.length;i++){
+				post=data[i];
+				row.append("<div class='column'> " + 
+	  					"<a id='titlePost' href='post.html?id="+post.id+"'>"+post.title+"</a>" +
+	  					"<p id='descriptionPost'>"+post.description+"</p>" +
+	  					"<a id='userPost' href='user.html?username="+post.userDTO.username+"'>"+post.userDTO.username+"</a>" +
+	  				"</div>");
+			}
+		});
+		
+		event.preventDefault();
+		return false;
+	});
+	
 });

@@ -75,6 +75,16 @@ public class PostController {
 		return new ResponseEntity<List<PostDTO>>(postsDTO, HttpStatus.OK);
 	}
 	
+	@GetMapping(value = "/search/{text}")
+    public ResponseEntity<List<PostDTO>> getSearchedPost(@PathVariable("text") String text){
+        List<Post> posts=postService.findAllBySearch(text);
+        List<PostDTO> postDTO=new ArrayList<>();
+        for (Post post:posts) {
+            postDTO.add(new PostDTO(post));
+        }
+        return new ResponseEntity<List<PostDTO>>(postDTO,HttpStatus.OK);
+    }
+	
 	@PostMapping(consumes="application/json")
 	public ResponseEntity<PostDTO> createPost(@RequestBody PostDTO postDTO){
 		Post post = new Post();

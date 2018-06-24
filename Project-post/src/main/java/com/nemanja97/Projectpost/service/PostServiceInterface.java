@@ -18,4 +18,6 @@ public interface PostServiceInterface {
 	List<Post> findAllOrderByLike();
 	List<Post> findAllOrderByDislike();
 	
+	List<Post> findAllBySearch(String text);
+	
 }

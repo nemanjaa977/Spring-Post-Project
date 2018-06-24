@@ -22,6 +22,7 @@ $(document).ready(function(){
 				"<button id='deleteButtonPost'><i class='fa fa-trash'></i> Delete post</button>");
 	}
 	
+	//prikaz posta
 	$.get("http://localhost:8080/api/posts/"+id,{},function(data){
 		console.log(data);
 		currentPost=data;
@@ -42,6 +43,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	//prikaz taga
 	$.get("http://localhost:8080/api/tag/post/"+id,{},function(data){
 		console.log(data);
 		for(var i=0; i<data.length; i++){
@@ -53,7 +55,8 @@ $(document).ready(function(){
 	newCommentDiv.append("<input type='text' id='inputCommentTitle' placeholder='Add new title comment ...'>" +
 						 "<input type='text' id='inputComment' placeholder='Add new description comment ...'>" + 
 						 "<input type='button' id='buttonNewComment' value='Add'>");
-
+	
+	//prikaz komentara
 	$.get("http://localhost:8080/api/comment/post/"+id,{},function(data){
 		allComments=data;
 		for(var i=0;i<data.length;i++){
@@ -79,6 +82,7 @@ $(document).ready(function(){
 		
 	});	
 	
+	//komentar like
 	$('body').on('click', 'button#likeCom',function(event){
 		var commId=$(this).attr('name');
 		var comment=allComments.find(x => x.id == commId);
@@ -105,6 +109,7 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	//komentar dislike
 	$('body').on('click', 'button#dislikeCom',function(event){
 		var commId=$(this).attr('name');
 		var comment=allComments.find(x => x.id == commId);
@@ -134,6 +139,7 @@ $(document).ready(function(){
 	var inputText = $('#inputComment');
 	var inputTextTitle = $('#inputCommentTitle');
 	
+	//dodavanje komentara
 	$('body').on('click', '#buttonNewComment',function(event){
 		var text = inputText.val();
 		var textTitle = inputTextTitle.val();
@@ -197,6 +203,7 @@ $(document).ready(function(){
 		$('body #ddeleteComment').hide();
 	}
 	
+	//brisanje posta
 	$('body').on('click', '#deleteButtonPost',function(event){
 		
 		$.ajax({
@@ -234,6 +241,7 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	//izmena komentara
 	$('body').on('click', '#saveEditComm',function(event){
 		var comment=allComments.find(x => x.id == commentID);
 		var oo = edittTitle.val();
@@ -275,6 +283,7 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	//brisanje komentara
 	$('body').on('click', '#ddeleteComment',function(event){
 		commentID = $(this).attr('name');
 		$.ajax({

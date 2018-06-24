@@ -76,7 +76,7 @@ $(document).ready(function(){
 				success : function(data) {
 					if(isOwner){
 						localStorage.removeItem("loggedUser");
-						localStorage.setItem("loggedUser", JSON.stringify(data));
+						localStorage.setItem("loggedUser", JSON.stringify(logged));
 					}
 					var location="user.html?username="+data.username;
 					window.location.replace(location);
